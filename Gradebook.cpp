@@ -11,7 +11,9 @@ void Gradebook::add_student(string name, string id) {
 
 void Gradebook::add_assignment(string noa, int tpp) {
     assignments.push_back(Assignment(noa, tpp));
-    maxNumberOfPoints += tpp;
+    for (int x = 0; x < students.size(); x++) {
+        students[x].add_ungraded();
+    }
 }
 
 void Gradebook::enter_grade(string studentName, string assignmentName, double points) {
@@ -29,7 +31,7 @@ void Gradebook::enter_grade(string studentName, string assignmentName, double po
         }
     }
     int max = assignments[assignmentIndex].get_max_points();
-    students[studentIndex].add_grade(points / max);
+    students[studentIndex].add_grade(points / max, assignmentIndex);
 }
 
 void Gradebook::report() {
@@ -55,7 +57,15 @@ void Gradebook::report() {
         }
         cout << lastName << ", " << firstName << ", " << students[x].get_ID();
         for (int z = 0; z < students[x].get_grades().size(); z++) {
-            cout << ", " << to_string(students[x].get_grades()[z]);
+            cout << ", ";
+            if (students[x].get_grades()[z] == -1) {
+                cout << "none";
+            }
+            else {
+                string grade = to_string(students[x].get_grades()[z]);
+                grade.resize(5);
+                cout << grade;
+            }
         }
         cout << endl;
     }

@@ -8,6 +8,12 @@ A.J.'s You Get an A! Assignment
 
 how to use
 ----------
+First, please note that "main_test.cpp" and "main_interactive.cpp" are not intended to be compiled together each of them has a seperate main function. 
+
+"main_test.cpp" is intended to just provide an example of how to use the code with the student's information being predetermined.
+
+"main_interactive.cpp" is diffrent it prompts the user for the information. It is setup to print the information to the console.
+
 There are 3 classes in this project but "Student" and "Assignment" are just used to store data so I will focus on explaining the "Gradebook" class.
 
 The "Gradebook" class has 5 methods the first of which is the constructor. The constructor takes 1 parameter called "cName" which is the name of the class for the gradebook.
@@ -23,12 +29,15 @@ the fifth method is "report" which takes no parameters. "report" is used to prin
 
 how to compile and run
 ----------------------
-I was able to compile all of the files after opening a console in the source folder using
+
+To use the diffrent main files you need to change the "main.cpp" in the following commands to the name of the file you want to use.
+
+After opening a console in the source folder compile your desired main file using:
 ```
-g++ -Wall main.cpp Gradebook.cpp Assignment.cpp Student.cpp -o grades
+g++ -Wall main.cpp Gradebook.cpp Assignment.cpp Student.cpp -o Gradebook.out
 ```
 
-Then I was able to run the program using
+To run the program, while the console is still in the source folder use the command:
 ```
-./grades
+./Gradebook.out
 ```

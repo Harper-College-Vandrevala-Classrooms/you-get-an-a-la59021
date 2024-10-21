@@ -14,8 +14,12 @@ string Student::get_ID() {
     return studentID;
 }
 
-void Student::add_grade(double grade) {
-    grades.push_back(grade * 100);
+void Student::add_ungraded() {
+    grades.push_back(-1);
+}
+
+void Student::add_grade(double grade, int index) {
+    grades[index] = grade * 100;
 }
 
 vector<double> Student::get_grades() {

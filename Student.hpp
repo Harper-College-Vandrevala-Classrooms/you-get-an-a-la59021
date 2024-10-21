@@ -11,6 +11,7 @@ class Student {
         Student(string name, string id);
         string get_name();
         string get_ID();
-        void add_grade(double grade);
+        void add_ungraded();
+        void add_grade(double grade, int index);
         vector<double> get_grades();
 };
