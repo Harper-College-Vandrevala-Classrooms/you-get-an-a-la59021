@@ -23,12 +23,12 @@ the fifth method is "report" which takes no parameters. "report" is used to prin
 
 how to compile and run
 ----------------------
-I was able to compile all of the files in a their default locations using 
+I was able to compile all of the files after opening a console in the source folder using
 ```
-/bin/bash -c g++ -Wall -Wextra -Wpedantic -Wshadow -Wformat=2 -Wcast-align -Wconversion -Wsign-conversion -Wnull-dereference -O3 -DNDEBUG -c /home/kamui_kazi/Documents/Code/you-get-an-a-la59021/Assignment.cpp -o ./build/Release/Assignment.o && g++ -Wall -Wextra -Wpedantic -Wshadow -Wformat=2 -Wcast-align -Wconversion -Wsign-conversion -Wnull-dereference -O3 -DNDEBUG  -c /home/kamui_kazi/Documents/Code/you-get-an-a-la59021/Gradebook.cpp -o ./build/Release/Gradebook.o && g++ -Wall -Wextra -Wpedantic -Wshadow -Wformat=2 -Wcast-align -Wconversion -Wsign-conversion -Wnull-dereference -O3 -DNDEBUG  -c /home/kamui_kazi/Documents/Code/you-get-an-a-la59021/Student.cpp -o ./build/Release/Student.o && g++ -Wall -Wextra -Wpedantic -Wshadow -Wformat=2 -Wcast-align -Wconversion -Wsign-conversion -Wnull-dereference -O3 -DNDEBUG  -c /home/kamui_kazi/Documents/Code/you-get-an-a-la59021/main.cpp -o ./build/Release/main.o && g++ -Wall -Wextra -Wpedantic -Wshadow -Wformat=2 -Wcast-align -Wconversion -Wsign-conversion -Wnull-dereference -O3 -DNDEBUG   ./build/Release/Assignment.o ./build/Release/Gradebook.o ./build/Release/Student.o ./build/Release/main.o -o ./build/Release/outRelease 
+g++ -Wall main.cpp Gradebook.cpp Assignment.cpp Student.cpp -o grades
 ```
 
 Then I was able to run the program using
 ```
-/bin/bash -c ./build/Release/outRelease
+./grades
 ```
